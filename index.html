@@ -1,76 +1,107 @@
-
-<head>
-    <title>Awesome Restaurants in the San Francisco Bay Area</title>
-    <meta charset="utf-8"/>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>The best application to disover good places to eat, great restaraunts, food with high ratings, and easily place orders.</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Top of the line popular restaurants with the must-eat items in SF BayArea"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Awesome Restaurants in the San Francisco Bay Area"/>
-    <meta property="og:url" content="http://codective.github.io/bestofthebay/"/>
-    <meta property="og:image" content="http://www.restaurantnews.com/wp-content/uploads/2014/03/First-Watch-Restaurants-Smoked-Salmon-Roasted-Vegetable-Frittata.jpg"/>
-    <meta property="og:site_name" content="BestOfTheBay"/>
-    <meta property="og:description" content="Top of the line popular restaurants with the must-eat items in SF BayArea"/>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <style>
-        .item {
-            display: none;
-        }
-    </style>
+    <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+   <!-- <script src="cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script> -->
+    <link href="application.css" rel="stylesheet">
+    <title></title>
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>Best of The Bay</h1>
-    </header>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#">Home</a></li>
+
+    <li><a href="order.html">Order</a></li>
+</ul>
+
+<!-----------------------HEADER SECTION ----------->
+<header>
+    <div class="jumbotron">
+        <div class="page-header">
+        <h1>Epic Restaurants <small>atleast in my opinion</small></h1>
+        </div>
+
+    </div>
+    <div><a href="order.html"></a></div>
+
+</header>
+<!-------------------END OF HEADER SECTION------------>
+
+<!-------------SELECT A RESTARAUNT AND MENU ITEM WILL APPEAR------------->
+
+<div class="main-page-box">
     <div class="row">
-        <div class="col-sm-6">
-            <div class="lead">Pick a Restaurant</div>
-            <ul id="restaurantList" class="list-unstyled">
-            </ul>
+
+        <!--<style>
+
+            .menuList{
+                display: none;
+            }
+
+        </style> -->
+
+        <!--------RESTARAUNT LIST-------->
+        <div class="restaurantList">
+
+            <select id="restaurant">
+
+            </select>
         </div>
-        <div class="col-sm-6">
-            <form action="" class="form-horizontal">
-                <div class="lead">Pick Menu Items From Mongolian</div>
-                <ul id="itemList" class="list-unstyled">
-                </ul>
-                <div class="well">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="email" name="email" placeholder="Email address" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <textarea id="notes" placeholder="Special Instructions" class="form-control" /></textarea>
-                            <div id="notesCounter" class="help-block">Keep it short</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-8">
-                            <input type="number" name="number" placeholder="Phone Number" class="form-control" />
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="submit" class="btn btn-success">Order</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+
     </div>
 
-    <ul id="github">
+    <!---------MENU LIST-------------->
+    <div class="menuList">
 
-    </ul>
-    <footer>
-        Copyright...
-    </footer>
+        <div class="row">
+        <ul id="menuItem">
+            <option value="Please Select Value">Please select value</option> </ul>
+
+        </div>
+
+
+
+
+    </div>
+    <div class ="panel panel-info">
+        <div class="price">PRICE PLACEHOLDER</div>
+
+        </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-<script src="bestofthebay.js"></script>
 
+<!---------------USERS INFORMATION----------->
+<div role="fm">
+    <div class="form-group">
+        <label>Email address</label>
+        <input type="email" id="emailAddress" name="email"required placeholder="Email address">
+    </div>
+    <div class="form-group">
+        <label>phone</label>
+        <input type="text" id="phoneNumber" pattern="[0-9]{10}" name="phone" required placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+        <label>Special Instructions</label>
+        <input type="text" id="notes" name="text" required placeholder="Less than 25 characters">
+        <p class="help-block">Space is limited, be short.</p>
+    </div>
+
+    <button id="submit" type="submit" class="btn btn-default">Submit</button>
+</div>
+
+
+
+
+</div>
+
+
+
+<script src="index.js"></script>
+<!--<script src>"bootstrap.js"</script>-->
+<div class=".panel-footer">IS THIS THE FOOTER</div>
 </body>
+
 </html>
